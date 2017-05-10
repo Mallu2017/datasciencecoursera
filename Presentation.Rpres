@@ -1,0 +1,71 @@
+Fake Contacts List Generator presentation 
+ ======================================================== 
+ author: Bijo Jose
+ date: 2017-05-10 
+
+ 
+Introduction
+======================================================== 
+
+ 
+ This presentation is for generating Fake Contacts List, that is part of Course Project for Developing Data Products. 
+
+ 
+ **Agenda** 
+ 
+ - Purpose 
+ - Data Details 
+ - Data Example 
+ - Summary 
+ 
+ 
+ Purpose
+======================================================== 
+ 
+ 
+ The purpose of the application is to provide useful interface for fake contact data. It could be use for testing different application where requires relevant contact information. 
+
+ 
+ 
+![Alt Text](screenshot.png) 
+
+
+ 
+ Data Details
+======================================================== 
+ 
+ 
+ **Data structure** 
+ - **Gender** - male or female 
+ - **GivenName**	- first name 
+ - **Surname**	- last name  
+ - **Email** - first letter of middle name 
+ - **Telephone** - person's Telephone 
+
+ 
+Interface provides possbilbity to change Gender and Age range for output result. 
+ 
+ 
+ Data Example
+======================================================== 
+ 
+ 
+ ```{r, echo=FALSE} 
+ data <- read.csv("individuals-fake-data-p2.csv", nrows = 5000, header = TRUE) 
+ head(data[, c(2,5,7,13,17)]) 
+ ``` 
+ 
+ 
+ Summary 
+======================================================== 
+ 
+This is a Shiny App presentation to illustrate the Fake Contacts List Generator 
+ 
+Fake Contacts Generator application could be found at: https://bjose.shinyapps.io/dataproducts2/
+
+Fake Contacts Generator presentation could be found at: http://rpubs.com/rpubsbijo/ShinyPresentation
+
+ 
+Source code of Course Project can be found on the GitHub repo: https://github.com/Mallu2017/datasciencecoursera
+
+
