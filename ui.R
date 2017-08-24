@@ -1,43 +1,27 @@
-
-library(shiny) 
-
- # Define UI for Fake Contacts Generator application 
- shinyUI(pageWithSidebar( 
-     
-    # Application title 
-     headerPanel("Contacts Name Generator by Bijo Jose"), 
-      
-     # Left panel with control elements for Fake Contacts Generator 
-     sidebarPanel( 
-         h5("Please, choose gender for a specific gender list..."), 
-       selectInput("gender", "Gender:", 
-                                        list("All" = "all",  
-                                                      "Male" = "male",  
-                                                     "Female" = "female")), 
-          
-         h5("... and age range for list for an age group"), 
-        sliderInput("age", "Age:", 
-                                       min = 18, max = 65, value = c(25,45)), 
-          
-        checkboxInput("emailaddress", "Show email in final list", FALSE), 
-        checkboxInput("telephonenumber", "Show phone in final list", FALSE) 
-        
-         
-     ), 
-      
-     # Right panel with Fake Contacts List as table and bar chart for distribution 
-    mainPanel( h2("The main purpose of this application is to create Fake Contacts list that could help some apllication testing"),
-         h3("Contacts "), 
-         dataTableOutput('dataTable'), 
-        h3("Contacts by Age and Gender"), 
-        h5(textOutput("caption")), 
-         plotOutput("contactsPlot") 
-       ) 
-   )) 
-
-
-
-
-
-
+library(shiny)
+shinyUI(   fluidPage(
+  headerPanel("Word Predict App"
+  ),
+  sidebarPanel(
+    h3("Introducton"),
+    p("This application predicts the next possible word in a phrase or sentence. To use it, simply type word(s) on the text field on the screen
+      and up to 4 possible next words will display in buttons below the field. Click on your intended match to add it to the field."),
+    p("This application was created as an academic project for the Capstone Course of the Coursera Data Science Specialization. We used natural language proccessing models, namely, n-grams, Markov model, and Katz's back-off model to produce the predictions.")
+    
+    ),
+  mainPanel(
+    h3("What Do You Want to Say?"),
+    textInput("inputTxt", "Type in word(s) below:", width = "90%"),
+    uiOutput("words"),
+    br(),
+    wellPanel(
+      h4("Technical Details"),
+      HTML("<p>Source code is freely available at <a href='https://github.com/Mallu2017/datasciencecoursera' target='_blank'>https://github.com/Mallu2017/datasciencecoursera</a></p>"),
+      HTML("<p>A detailed application architecture presentation available at <a href='https://github.com/Mallu2017/datasciencecoursera' target='_blank'>http://rpubs.com/rpubsbijo/DataScienceCapstoneProject)</a></p>"),
+      h4("Author:"),
+      p("Bijo Jose")
+    )
+    
+  )
+)) 
 
